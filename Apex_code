@@ -1,0 +1,14 @@
+public class Lab3 {
+    public static void updateOlderAccounts(){
+        
+        Account[] oldAccounts = [SELECT id,Description FROM Account ORDER BY CreatedDate ASC LIMIT 5];
+        
+        for (Account acct : oldAccounts){
+            acct.Description = 'Heritage Account';
+            
+        }
+        update oldAccounts;
+        
+    }
+
+}
